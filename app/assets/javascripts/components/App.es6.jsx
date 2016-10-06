@@ -23,7 +23,7 @@ class App extends React.Component {
 
         <IDSearch onSearch={this.handleFindByID} key="blahp" />
 
-
+        <TitleSearch onSearch={this.handleFindByID} key="gooblybop" />
 
         <MovieList movies={this.state.movies} key="bloop" />
 
