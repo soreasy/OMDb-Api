@@ -8,6 +8,7 @@ class App extends React.Component {
   }
 
   handleFindByID(movie) {
+    debugger;
     this.setState({
       movies: [movie].concat(this.state.movies)
     })
@@ -20,11 +21,11 @@ class App extends React.Component {
         <h2>Movies!!!</h2>
         <h5>Search by:</h5>
 
-        <IDSearch onSearch = {this.handleFindByID} />
+        <IDSearch onSearch={this.handleFindByID} key="blahp" />
 
 
 
-        <MovieList movies = {this.state.movies} />
+        <MovieList movies={this.state.movies} key="bloop" />
 
 
       </div>

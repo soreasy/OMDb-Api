@@ -7,19 +7,21 @@ class IDSearch extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    debugger;
-    $.ajax({
-      url: 'omdbapi.com/' + input
-    }).done(function(response) {
-      this.props.onSearch(response)
+    var id = this.refs.IDSearcher.value;
+    var api_url = "http://omdbapi.com/?i="+id;
+    var this_comp = this;
 
+    $.ajax({
+      url: api_url
+    }).done(function(response) {
+      this_comp.props.onSearch(response)
     })
   }
 
   render() {
     return(
       <form onSubmit={this.handleSubmit}>
-        <label>ID: </label>
+        <label>IMBD id: </label>
         <input ref="IDSearcher" type="text" />
         <input type="submit" value="Search" />
       </form>
